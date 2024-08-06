@@ -1,6 +1,6 @@
 # Personal Website
 
-Welcome to the work-in-progress repository for [Garret Mook's](https://garretmook.com) personal website. This project is built using modern web development tools and practices.
+Work-in-progress repository.
 
 ## Technologies Used
 
