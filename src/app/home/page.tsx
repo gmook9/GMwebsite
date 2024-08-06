@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const HomePage: React.FC = () => {
+const home: React.FC = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
       <div className="text-center">
@@ -74,4 +74,4 @@ const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;
+export default home;
