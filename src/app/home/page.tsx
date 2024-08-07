@@ -1,77 +1,63 @@
 import React from 'react';
 import Image from 'next/image';
+import Card from '../components/card';
 
-const home: React.FC = () => {
+const Home: React.FC = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
-      <div className="text-center">
-        <div className="mb-8">
-          <Image
-            src="/images/profileImage.jpg"
-            alt="Profile Image"
-            width={150}
-            height={150}
-            className="rounded-full mx-auto"
-          />
-        </div>
-        <h1 className="text-3xl font-bold mb-8">
-          Check out my links :)
-        </h1>
-
-        <div className="flex flex-col space-y-4 items-center">
-          <a
-            href="https://github.com/gmook9"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-72 px-6 py-3 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700"
-          >
-            <Image src="/images/githubLogo.png" alt="GitHub Logo" width={24} height={24} className="mr-2" />
-            Visit My GitHub
-          </a>
-
-          <a
-            href="https://www.grailed.com/enchantingbutterfly"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-72 px-6 py-3 font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-600"
-          >
-            <Image src="/images/eblogo.png" alt="Enchanting Butterfly Logo" width={24} height={24} className="mr-2" />
-            Shop Enchanting Butterfly
-          </a>
-
-          <a
-            href="https://enchantingbutterfly.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-72 px-6 py-3 font-semibold text-white bg-blue-400 rounded-full hover:bg-blue-500"
-          >
-            <Image src="/images/eblogo.png" alt="Enchanting Butterfly Logo" width={24} height={24} className="mr-2" />
-            Official Enchanting Butterfly Website
-          </a>
-
-          <a
-            href="https://www.depop.com/st4rdelic/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-72 px-6 py-3 font-semibold text-white bg-indigo-500 rounded-full hover:bg-indigo-600"
-          >
-            <Image src="/images/stardeliclogo.png" alt="Stardelic Logo" width={24} height={24} className="mr-2" />
-            Shop Stardelic
-          </a>
-
-          <a
-            href="https://st4rdelic.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-72 px-6 py-3 font-semibold text-white bg-indigo-400 rounded-full hover:bg-indigo-500"
-          >
-            <Image src="/images/stardeliclogo.png" alt="Stardelic Logo" width={24} height={24} className="mr-2" />
-            Official Stardelic Website
-          </a>
-        </div>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+      <div className="mb-8">
+        <Image
+          src="/images/profileImage.jpg"
+          alt="Profile Image"
+          width={150}
+          height={150}
+          className="rounded-full mx-auto"
+        />
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Card
+          imageUrl="/images/githubLogo.png"
+          cardName="Visit My GitHub"
+          cardBodyText="Check out my projects and repositories on GitHub."
+          btnColor="bg-blue-600 hover:bg-blue-700"
+          cardColor="bg-gray-800"
+          btnLink="https://github.com/gmook9"
+        />
+        <Card
+          imageUrl="/images/eblogo.png"
+          cardName="Shop Enchanting Butterfly"
+          cardBodyText="Explore our collection of enchanting products on Grailed."
+          btnColor="bg-blue-500 hover:bg-blue-600"
+          cardColor="bg-gray-700"
+          btnLink="https://www.grailed.com/enchantingbutterfly"
+        />
+        <Card
+          imageUrl="/images/eblogo.png"
+          cardName="Official Enchanting Butterfly Website"
+          cardBodyText="Visit our official website for exclusive offers and updates."
+          btnColor="bg-blue-400 hover:bg-blue-500"
+          cardColor="bg-gray-600"
+          btnLink="https://enchantingbutterfly.com/"
+        />
+        <Card
+          imageUrl="/images/stardeliclogo.png"
+          cardName="Shop Stardelic"
+          cardBodyText="Discover unique items from Stardelic on Depop."
+          btnColor="bg-indigo-500 hover:bg-indigo-600"
+          cardColor="bg-gray-800"
+          btnLink="https://www.depop.com/st4rdelic/"
+        />
+        <Card
+          imageUrl="/images/stardeliclogo.png"
+          cardName="Official Stardelic Website"
+          cardBodyText="Check out our official Stardelic website for more."
+          btnColor="bg-indigo-400 hover:bg-indigo-500"
+          cardColor="bg-gray-700"
+          btnLink="https://st4rdelic.com/"
+        />
       </div>
     </div>
   );
 };
 
-export default home;
+export default Home;
