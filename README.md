@@ -1,16 +1,22 @@
-# Personal Website
+# Personal Website - `garretmook.com`
 
-Welcome to the work-in-progress repository for [Garret Mook's](https://garretmook.com) personal website. This project is built using modern web development tools and practices.
+This is the code for my personal website, [garretmook.com](https://garretmook.com).
 
-## Technologies Used
+## Tech Stack
 
-- React
-- Next.js
-- Tailwind CSS
-- TypeScript
+- **Next.js**
+- **React**
+- **TailwindCSS**
+
+## Additional Dependencies
+
+- **DaisyUI**
+- **TypeScript**
 
 ## Getting Started
 
-1. **Install dependencies:**
-   ```sh
-   npm install
+To view the site locally:
+
+1. **Clone the repository**: `git clone https://github.com/gmook9/GMwebsite.git`
+2. **Install dependencies**: `npm install`
+3. **Run the development server**: `npm run dev`
