@@ -11,12 +11,12 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ imageUrl, cardName, cardBodyText, btnColor, cardColor, btnLink }) => {
   return (
-    <div className="card bg-base-100 w-96 shadow-xl">
+    <div className="card bg-base-100 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-sm shadow-xl pb-109">
       <figure className="flex justify-center items-center p-4 bg-white">
         <img
           src={imageUrl}
           alt={cardName}
-          className="object-contain max-h-48"
+          className="object-contain max-h-48 w-full"
         />
       </figure>
       <div className={`card-body ${cardColor}`}>
