@@ -5,7 +5,7 @@ import Card from '../components/card';
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white pb-16">
-      <div className="mb-8">
+      <div className="mb-8 pt-4">
         <Image
           src="/images/profileImage.jpg"
           alt="Profile Image"
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
           btnLink="https://github.com/gmook9"
         />
         <Card
-          imageUrl="/images/eblogo.png"
+          imageUrl="/images/ebwebstore.png"
           cardName="Shop Enchanting Butterfly"
           cardBodyText="Explore our collection of enchanting products on Grailed."
           btnColor="bg-gray-900 hover:bg-blue-500"
@@ -40,7 +40,7 @@ const Home: React.FC = () => {
           btnLink="https://enchantingbutterfly.com/"
         />
         <Card
-          imageUrl="/images/stardeliclogo.png"
+          imageUrl="/images/stardelicwebstore.png"
           cardName="Shop Stardelic"
           cardBodyText="Discover unique items from Stardelic on Depop."
           btnColor="bg-gray-900 hover:bg-indigo-500"

@@ -12,7 +12,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ imageUrl, cardName, cardBodyText, btnColor, cardColor, btnLink }) => {
   return (
     <div className="card bg-base-100 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-sm shadow-xl pb-109">
-      <figure className="flex justify-center items-center p-4 bg-white">
+      <figure className="flex justify-center items-center p-4 bg-gray-200">
         <img
           src={imageUrl}
           alt={cardName}
