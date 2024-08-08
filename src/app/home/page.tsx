@@ -1,18 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import Card from '../components/card';
+import Avatar from '../components/avatar';
 
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white pb-16">
       <div className="mb-8 pt-4">
-        <Image
-          src="/images/profileImage.jpg"
-          alt="Profile Image"
-          width={150}
-          height={150}
-          className="rounded-full mx-auto"
-        />
+        <Avatar />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <Card
