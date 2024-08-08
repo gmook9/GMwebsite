@@ -12,8 +12,8 @@ const Home: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <Card
           imageUrl="/images/githubLogo.png"
-          cardName="Visit My GitHub"
-          cardBodyText="Check out my projects and repositories on GitHub."
+          cardName="GitHub"
+          cardBodyText="My projects and repositories on GitHub."
           btnColor="bg-gray-900 hover:bg-amber-700"
           cardColor="bg-amber-800"
           btnLink="https://github.com/gmook9"
@@ -21,15 +21,15 @@ const Home: React.FC = () => {
         <Card
           imageUrl="/images/ebwebstore.png"
           cardName="Shop Enchanting Butterfly"
-          cardBodyText="Explore our collection of enchanting products on Grailed."
+          cardBodyText="Shop Enchanting Butterfly on Grailed."
           btnColor="bg-gray-900 hover:bg-blue-500"
           cardColor="bg-blue-600"
           btnLink="https://www.grailed.com/enchantingbutterfly"
         />
         <Card
           imageUrl="/images/eblogo.png"
-          cardName="Official Enchanting Butterfly Website"
-          cardBodyText="Visit our official website for exclusive offers and updates."
+          cardName="Enchanting Butterfly"
+          cardBodyText="Official Enchanting Butterfly website"
           btnColor="bg-gray-900 hover:bg-blue-700"
           cardColor="bg-blue-800"
           btnLink="https://enchantingbutterfly.com/"
@@ -37,15 +37,15 @@ const Home: React.FC = () => {
         <Card
           imageUrl="/images/stardelicwebstore.png"
           cardName="Shop Stardelic"
-          cardBodyText="Discover unique items from Stardelic on Depop."
+          cardBodyText="Shop Stardelic on Depop."
           btnColor="bg-gray-900 hover:bg-indigo-500"
           cardColor="bg-indigo-600"
           btnLink="https://www.depop.com/st4rdelic/"
         />
         <Card
           imageUrl="/images/stardeliclogo.png"
-          cardName="Official Stardelic Website"
-          cardBodyText="Check out our official Stardelic website for more."
+          cardName="Stardelic"
+          cardBodyText="Official Stardelic website."
           btnColor="bg-gray-900 hover:bg-indigo-700"
           cardColor="bg-indigo-800"
           btnLink="https://st4rdelic.com/"
