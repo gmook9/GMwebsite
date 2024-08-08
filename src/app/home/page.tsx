@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import Card from '../components/card';
-import Avatar from '../components/avatar';
+import Card from '../components/Card';
+import Avatar from '../components/Avatar';
 
 const Home: React.FC = () => {
   return (
