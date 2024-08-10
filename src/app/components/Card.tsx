@@ -11,20 +11,20 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ imageUrl, cardName, cardBodyText, btnColor, cardColor, btnLink }) => {
   return (
-    <div className="card bg-base-100 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-sm shadow-xl pb-109">
-      <figure className="flex justify-center items-center p-4 bg-gray-200">
+    <div className={`card w-full max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-sm shadow-lg pb-4 ${cardColor}`}>
+      <figure className="flex justify-center items-center p-3 bg-gray-200">
         <img
           src={imageUrl}
           alt={cardName}
-          className="object-contain max-h-48 w-full"
+          className="object-contain max-h-40 w-full"
         />
       </figure>
-      <div className={`card-body ${cardColor}`}>
-        <h2 className="card-title text-left">{cardName}</h2>
-        <p className="text-left">{cardBodyText}</p>
-        <div className="card-actions justify-end mt-4">
+      <div className={`card-body p-4`}>
+        <h2 className="card-title text-base text-left">{cardName}</h2>
+        <p className="text-sm text-left">{cardBodyText}</p>
+        <div className="card-actions flex justify-center mt-5">
           <a href={btnLink} target="_blank" rel="noopener noreferrer">
-            <button className={`btn ${btnColor} text-white`}>Visit Now</button>
+            <button className={`btn ${btnColor} btn-sm text-sm text-white`}>Visit Now</button>
           </a>
         </div>
       </div>
