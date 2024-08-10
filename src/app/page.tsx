@@ -1,142 +1,108 @@
-'use client';
-
-import React, { useCallback } from 'react';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
-import CodeBlock from "../app/components/CodeBlock";
+'use client'
+import React, { useEffect, useMemo, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
+import { type ISourceOptions, MoveDirection, OutMode } from '@tsparticles/engine';
+import CodeBlock from '../app/components/CodeBlock';
 
 const HomePage: React.FC = () => {
-  const particlesInit = useCallback(async (engine: any) => {      
-    await loadFull(engine);
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
   }, []);
 
-  const particlesLoaded = useCallback(async (container: any) => {
+  const particlesLoaded = async (container?: any): Promise<void> => {
     console.log(container);
-  }, []);
+  };
 
-  return (
-    <div className="relative min-h-screen w-full bg-gray-900 flex flex-col items-center justify-center p-4 overflow-hidden">
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={{
-          fullScreen: false,
-          background: {
-            color: {
-              value: "#000000",
-            },
-            image: "linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)",
+  const options: ISourceOptions = useMemo(
+    () => ({
+      background: {
+        color: {
+          value: '#0d47a1',
+        },
+      },
+      fpsLimit: 120,
+      interactivity: {
+        events: {
+          onClick: {
+            enable: true,
+            mode: 'push',
           },
-          particles: {
-            number: {
-              value: 10,
-              density: {
-                enable: true,
-                value_area: 600,
-              },
-            },
-            color: {
-              value: "#ffffff",
-            },
-            shape: {
-              type: "square",
-              stroke: {
-                width: 0,
-                color: "#000000",
-              },
-              polygon: {
-                nb_sides: 5,
-              },
-            },
-            opacity: {
-              value: 0.25,
-              random: true,
-              anim: {
-                enable: false,
-                speed: 1,
-                opacity_min: 0.1,
-                sync: false,
-              },
-            },
-            size: {
-              value: 29,
-              random: true,
-              anim: {
-                enable: false,
-                speed: 2,
-                size_min: 0.1,
-                sync: false,
-              },
-            },
-            line_linked: {
-              enable: false,
-              distance: 300,
-              color: "#ffffff",
-              opacity: 0,
-              width: 0,
-            },
-            move: {
-              enable: true,
-              speed: 0.5,
-              direction: "top",
-              straight: true,
-              out_mode: "out",
-              bounce: false,
-              attract: {
-                enable: false,
-                rotateX: 600,
-                rotateY: 1200,
-              },
-            },
+          onHover: {
+            enable: true,
+            mode: 'repulse',
           },
-          interactivity: {
-            detect_on: "canvas",
-            events: {
-              onhover: {
-                enable: false,
-                mode: "repulse",
-              },
-              onclick: {
-                enable: false,
-                mode: "push",
-              },
-              resize: true,
-            },
-            modes: {
-              grab: {
-                distance: 800,
-                line_linked: {
-                  opacity: 1,
-                },
-              },
-              bubble: {
-                distance: 790,
-                size: 79,
-                duration: 2,
-                opacity: 0.8,
-                speed: 3,
-              },
-              repulse: {
-                distance: 400,
-                duration: 0.4,
-              },
-              push: {
-                particles_nb: 4,
-              },
-              remove: {
-                particles_nb: 2,
-              },
-            },
+        },
+        modes: {
+          push: {
+            quantity: 4,
           },
-          retina_detect: true,
-        }}
-      />
-      <div className="relative z-10 text-center">
-        <CodeBlock />
-      </div>
-    </div>
+          repulse: {
+            distance: 200,
+            duration: 0.4,
+          },
+        },
+      },
+      particles: {
+        color: {
+          value: '#ffffff',
+        },
+        links: {
+          color: '#ffffff',
+          distance: 150,
+          enable: true,
+          opacity: 0.5,
+          width: 1,
+        },
+        move: {
+          direction: MoveDirection.none,
+          enable: true,
+          outModes: {
+            default: OutMode.out,
+          },
+          random: true,
+          speed: 1,
+          straight: false,
+        },
+        number: {
+          density: {
+            enable: true,
+          },
+          value: 80,
+        },
+        opacity: {
+          value: 0.5,
+        },
+        shape: {
+          type: 'star',
+        },
+        size: {
+          value: { min: 1, max: 5 },
+        },
+      },
+      detectRetina: true,
+    }),
+    []
   );
+
+  if (init) {
+    return (
+      <div className="relative min-h-screen w-full bg-gray-900 flex flex-col items-center justify-center p-4 overflow-hidden">
+        <Particles id="tsparticles" particlesLoaded={particlesLoaded} options={options} />
+        <div className="relative z-10 flex items-center justify-center h-full w-full">
+          <CodeBlock />
+        </div>
+      </div>
+    );
+  }
+
+  return <></>;
 };
 
 export default HomePage;
