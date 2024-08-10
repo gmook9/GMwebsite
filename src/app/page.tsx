@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
     () => ({
       background: {
         color: {
-          value: '#0d47a1',
+          value: '#1a202c',
         },
       },
       fpsLimit: 120,
