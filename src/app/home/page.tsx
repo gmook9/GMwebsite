@@ -1,103 +1,15 @@
 'use client'
-import React, { useEffect, useMemo, useState } from 'react';
-import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { loadSlim } from '@tsparticles/slim';
-import { type ISourceOptions, MoveDirection, OutMode } from '@tsparticles/engine';
+import React, { useState } from 'react';
+import ParticleBackground from '../components/ParticleBackground';
 import Card from '../components/Card';
 import Avatar from '../components/Avatar';
 
 const Home: React.FC = () => {
-  const [init, setInit] = useState(false);
   const [starRating, setStarRating] = useState(1); // State for star rating
-
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
-
-  const particlesLoaded = async (container?: any): Promise<void> => {
-    console.log(container);
-  };
-
-  const options: ISourceOptions = useMemo(
-    () => ({
-      background: {
-        color: {
-          value: '#1a202c',
-        },
-      },
-      fpsLimit: 120,
-      interactivity: {
-        events: {
-          onClick: {
-            enable: true,
-            mode: 'push',
-          },
-          onHover: {
-            enable: true,
-            mode: 'repulse',
-          },
-        },
-        modes: {
-          push: {
-            quantity: 4,
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4,
-          },
-        },
-      },
-      particles: {
-        color: {
-          value: '#ffffff',
-        },
-        links: {
-          color: '#ffffff',
-          distance: 150,
-          enable: true,
-          opacity: 0.5,
-          width: 1,
-        },
-        move: {
-          direction: MoveDirection.none,
-          enable: true,
-          outModes: {
-            default: OutMode.out,
-          },
-          random: true,
-          speed: starRating, // Adjust speed based on star rating
-          straight: false,
-        },
-        number: {
-          density: {
-            enable: true,
-          },
-          value: 80,
-        },
-        opacity: {
-          value: 0.5,
-        },
-        shape: {
-          type: 'star',
-        },
-        size: {
-          value: { min: 1, max: 5 },
-        },
-      },
-      detectRetina: true,
-    }),
-    [starRating]
-  );
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white pb-16 overflow-hidden">
-      {init && (
-        <Particles id="tsparticles" particlesLoaded={particlesLoaded} options={options} />
-      )}
+      <ParticleBackground speed={starRating} />
       <div className="relative z-10 mb-8 pt-4">
         <Avatar />
       </div>
