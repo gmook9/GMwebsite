@@ -6,7 +6,6 @@ import { type ISourceOptions, MoveDirection, OutMode } from '@tsparticles/engine
 import Card from '../components/Card';
 import Avatar from '../components/Avatar';
 
-
 const Home: React.FC = () => {
   const [init, setInit] = useState(false);
 
