@@ -19,7 +19,7 @@ const Home: React.FC = () => {
           cardName="GitHub"
           cardBodyText="My projects and repositories on GitHub."
           btnColor="bg-gray-900 hover:bg-amber-700"
-          cardColor="bg-amber-900"  // Darker shade of amber
+          cardColor="bg-amber-900"
           btnLink="https://github.com/gmook9"
         />
         <Card
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
           cardName="Shop Enchanting Butterfly"
           cardBodyText="Shop Enchanting Butterfly on Grailed."
           btnColor="bg-gray-900 hover:bg-blue-500"
-          cardColor="bg-blue-800"  // Darker shade of blue
+          cardColor="bg-blue-800"
           btnLink="https://www.grailed.com/enchantingbutterfly"
         />
         <Card
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
           cardName="Enchanting Butterfly"
           cardBodyText="Official Enchanting Butterfly website"
           btnColor="bg-gray-900 hover:bg-blue-700"
-          cardColor="bg-blue-900"  // Darker shade of blue
+          cardColor="bg-blue-900" 
           btnLink="https://enchantingbutterfly.com/"
         />
         <Card
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
           cardName="Shop Stardelic"
           cardBodyText="Shop Stardelic on Depop."
           btnColor="bg-gray-900 hover:bg-indigo-500"
-          cardColor="bg-indigo-800"  // Darker shade of indigo
+          cardColor="bg-indigo-800"
           btnLink="https://www.depop.com/st4rdelic/"
         />
         <Card
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
           cardName="Stardelic"
           cardBodyText="Official Stardelic website."
           btnColor="bg-gray-900 hover:bg-indigo-700"
-          cardColor="bg-indigo-900"  // Darker shade of indigo
+          cardColor="bg-indigo-900"
           btnLink="https://st4rdelic.com/"
         />
       </div>
