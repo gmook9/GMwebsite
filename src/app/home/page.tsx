@@ -1,102 +1,15 @@
 'use client'
-import React, { useEffect, useMemo, useState } from 'react';
-import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { loadSlim } from '@tsparticles/slim';
-import { type ISourceOptions, MoveDirection, OutMode } from '@tsparticles/engine';
+import React, { useState } from 'react';
+import ParticleBackground from '../components/ParticleBackground';
 import Card from '../components/Card';
 import Avatar from '../components/Avatar';
 
 const Home: React.FC = () => {
-  const [init, setInit] = useState(false);
-
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
-
-  const particlesLoaded = async (container?: any): Promise<void> => {
-    console.log(container);
-  };
-
-  const options: ISourceOptions = useMemo(
-    () => ({
-      background: {
-        color: {
-          value: '#1a202c',
-        },
-      },
-      fpsLimit: 120,
-      interactivity: {
-        events: {
-          onClick: {
-            enable: true,
-            mode: 'push',
-          },
-          onHover: {
-            enable: true,
-            mode: 'repulse',
-          },
-        },
-        modes: {
-          push: {
-            quantity: 4,
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4,
-          },
-        },
-      },
-      particles: {
-        color: {
-          value: '#ffffff',
-        },
-        links: {
-          color: '#ffffff',
-          distance: 150,
-          enable: true,
-          opacity: 0.5,
-          width: 1,
-        },
-        move: {
-          direction: MoveDirection.none,
-          enable: true,
-          outModes: {
-            default: OutMode.out,
-          },
-          random: true,
-          speed: 1,
-          straight: false,
-        },
-        number: {
-          density: {
-            enable: true,
-          },
-          value: 80,
-        },
-        opacity: {
-          value: 0.5,
-        },
-        shape: {
-          type: 'star',
-        },
-        size: {
-          value: { min: 1, max: 5 },
-        },
-      },
-      detectRetina: true,
-    }),
-    []
-  );
+  const [starRating, setStarRating] = useState(1); // State for star rating
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white pb-16 overflow-hidden">
-      {init && (
-        <Particles id="tsparticles" particlesLoaded={particlesLoaded} options={options} />
-      )}
+      <ParticleBackground speed={starRating} />
       <div className="relative z-10 mb-8 pt-4">
         <Avatar />
       </div>
@@ -141,6 +54,45 @@ const Home: React.FC = () => {
           cardColor="bg-indigo-800"
           btnLink="https://st4rdelic.com/"
         />
+      </div>
+      <div className="relative z-10 mt-8">
+        <div className="rating">
+          <input
+            type="radio"
+            name="rating-1"
+            className="mask mask-star"
+            checked={starRating === 1}
+            onChange={() => setStarRating(1)}
+          />
+          <input
+            type="radio"
+            name="rating-1"
+            className="mask mask-star"
+            checked={starRating === 2}
+            onChange={() => setStarRating(2)}
+          />
+          <input
+            type="radio"
+            name="rating-1"
+            className="mask mask-star"
+            checked={starRating === 3}
+            onChange={() => setStarRating(3)}
+          />
+          <input
+            type="radio"
+            name="rating-1"
+            className="mask mask-star"
+            checked={starRating === 4}
+            onChange={() => setStarRating(4)}
+          />
+          <input
+            type="radio"
+            name="rating-1"
+            className="mask mask-star"
+            checked={starRating === 5}
+            onChange={() => setStarRating(5)}
+          />
+        </div>
       </div>
     </div>
   );
