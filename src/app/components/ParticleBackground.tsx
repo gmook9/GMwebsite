@@ -77,7 +77,7 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ speed }) => {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 100,
         },
         opacity: {
           value: 0.5,
@@ -86,7 +86,7 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ speed }) => {
           type: 'star',
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 2, max: 5 },
         },
       },
       detectRetina: true,
