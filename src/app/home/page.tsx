@@ -8,6 +8,7 @@ import Avatar from '../components/Avatar';
 
 const Home: React.FC = () => {
   const [init, setInit] = useState(false);
+  const [starRating, setStarRating] = useState(1); // State for star rating
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -68,7 +69,7 @@ const Home: React.FC = () => {
             default: OutMode.out,
           },
           random: true,
-          speed: 1,
+          speed: starRating, // Adjust speed based on star rating
           straight: false,
         },
         number: {
@@ -89,7 +90,7 @@ const Home: React.FC = () => {
       },
       detectRetina: true,
     }),
-    []
+    [starRating]
   );
 
   return (
@@ -141,6 +142,45 @@ const Home: React.FC = () => {
           cardColor="bg-indigo-800"
           btnLink="https://st4rdelic.com/"
         />
+      </div>
+      <div className="relative z-10 mt-8">
+        <div className="rating">
+          <input
+            type="radio"
+            name="rating-1"
+            className="mask mask-star"
+            checked={starRating === 1}
+            onChange={() => setStarRating(1)}
+          />
+          <input
+            type="radio"
+            name="rating-1"
+            className="mask mask-star"
+            checked={starRating === 2}
+            onChange={() => setStarRating(2)}
+          />
+          <input
+            type="radio"
+            name="rating-1"
+            className="mask mask-star"
+            checked={starRating === 3}
+            onChange={() => setStarRating(3)}
+          />
+          <input
+            type="radio"
+            name="rating-1"
+            className="mask mask-star"
+            checked={starRating === 4}
+            onChange={() => setStarRating(4)}
+          />
+          <input
+            type="radio"
+            name="rating-1"
+            className="mask mask-star"
+            checked={starRating === 5}
+            onChange={() => setStarRating(5)}
+          />
+        </div>
       </div>
     </div>
   );
