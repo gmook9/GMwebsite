@@ -6,7 +6,11 @@ const CodeBlock: React.FC = () => {
     <div className="mockup-code">
       <pre data-prefix="$"><code>Hello</code></pre>
       <pre data-prefix=">" className="text-warning"><code>Welcome...</code></pre>
-      <pre data-prefix="$"><code>I am a Software Developer focused on creating impactful digital solutions.</code></pre>
+      <pre data-prefix="$">
+        <code className="whitespace-pre-wrap inline-block align-top sm:whitespace-nowrap">
+          I am a Software Developer <span className="block sm:inline">focused on creating impactful </span><span className="block sm:inline">digital solutions.</span>
+        </code>
+      </pre>
       <pre data-prefix=">" className="text-success">
         <code>
           <Link href="/home" className="hover:underline">
