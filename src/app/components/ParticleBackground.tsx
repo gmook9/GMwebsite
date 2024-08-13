@@ -1,4 +1,3 @@
-'use client'
 import React, { useEffect, useMemo, useState } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
@@ -8,7 +7,7 @@ interface ParticleBackgroundProps {
   speed: number;
 }
 
-const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ speed }) => {
+const ParticleBackground: React.FC<ParticleBackgroundProps> = React.memo(({ speed }) => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -99,6 +98,6 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ speed }) => {
       {init && <Particles id="tsparticles" particlesLoaded={particlesLoaded} options={options} />}
     </>
   );
-};
+});
 
 export default ParticleBackground;
