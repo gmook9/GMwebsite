@@ -14,7 +14,7 @@ const CodeBlock: React.FC = () => {
       <pre data-prefix=">" className="text-success">
         <code>
           <Link href="/home" className="hover:underline">
-            Click here to see more.
+            Click here to see more
           </Link>
         </code>
       </pre>

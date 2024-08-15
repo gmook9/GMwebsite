@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Garret Mook",
-  description: "Garret Mook's Website",
+  title: "GM9",
+  description: "Personal Website",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
