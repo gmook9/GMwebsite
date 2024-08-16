@@ -8,12 +8,18 @@ export default function NotFound() {
         <ParticleBackground speed={1} />
         <div style={{ position: 'relative', zIndex: 1 }}>
           <Alert message="404 - Page Not Found" />
-          <button
-            onClick={() => window.location.href = 'https://garretmook.com/home'}
-            style={{ marginTop: '20px', padding: '10px 20px', backgroundColor: '#1D4ED8', color: '#FFF', borderRadius: '8px', border: 'none', cursor: 'pointer' }}
-          >
-            Back home
-          </button>
+          <a href="https://garretmook.com/home" style={{ marginTop: '20px', display: 'inline-block' }}>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="48" 
+              height="48" 
+              viewBox="0 0 24 24" 
+              fill="white"
+              style={{ cursor: 'pointer' }}
+            >
+              <path d="M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z"/>
+            </svg>
+          </a>
         </div>
       </div>
     );
